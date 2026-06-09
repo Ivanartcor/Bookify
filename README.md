@@ -1,27 +1,146 @@
-# Booking
+# Bookify — Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Bookify es una plataforma web para la gestión de citas entre clientes, empresas y empleados. El objetivo del proyecto es ofrecer una solución intuitiva para buscar empresas y servicios, reservar citas, gestionar disponibilidad, consultar citas asignadas y facilitar la comunicación entre los distintos perfiles de usuario.
 
-## Development server
+Este repositorio contiene el frontend de la aplicación, desarrollado con Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Descripción general
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Bookify está diseñado como una plataforma multirol:
 
-## Build
+* **Clientes:** pueden buscar empresas, consultar servicios, reservar citas, gestionar su perfil y revisar sus citas.
+* **Empresas:** pueden administrar servicios, empleados, disponibilidad, citas, categorías y datos asociados a su negocio.
+* **Empleados:** pueden consultar y gestionar las citas que tienen asignadas.
+* **Usuarios no autenticados:** pueden acceder a secciones informativas como contacto, FAQ o política de privacidad.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+La aplicación se comunica con una API REST desarrollada en NestJS y MySQL.
 
-## Running unit tests
+Repositorio backend:
+`https://github.com/Ivanartcor/bookify-backend`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Tecnologías utilizadas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Angular 16
+* TypeScript
+* HTML
+* SCSS
+* Bootstrap
+* Bootstrap Icons
+* RxJS
+* FullCalendar
+* Chart.js
+* ECharts / ngx-echarts
+* Angular Router
+* Guards de autenticación y roles
+* Servicios HTTP para comunicación con API REST
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Funcionalidades principales
+
+* Autenticación de usuarios.
+* Separación de vistas por rol: cliente, empresa y empleado.
+* Rutas protegidas mediante guardias de autenticación.
+* Gestión de perfil de usuario.
+* Gestión de empresas y servicios.
+* Reserva y consulta de citas.
+* Gestión de citas por cliente, empresa y empleado.
+* Visualización de calendarios.
+* Formularios y validaciones.
+* Secciones informativas: FAQ, contacto y política de privacidad.
+* Interfaz responsive orientada a una experiencia clara y funcional.
+
+---
+
+## Estructura general del proyecto
+
+```text
+src/
+├── app/
+│   ├── core/              # Guards, servicios base y lógica compartida
+│   ├── features/
+│   │   ├── auth/          # Login, registro y autenticación
+│   │   ├── client/        # Área de cliente
+│   │   ├── company/       # Área de empresa
+│   │   ├── employee/      # Área de empleado
+│   │   ├── contacto/      # Página de contacto
+│   │   ├── faq/           # Preguntas frecuentes
+│   │   └── politica-privacidad/
+│   ├── shared/            # Componentes o recursos compartidos
+│   └── app-routing.module.ts
+```
+
+---
+
+## Instalación y ejecución
+
+### Requisitos previos
+
+* Node.js
+* npm
+* Angular CLI
+
+### Instalar dependencias
+
+```bash
+npm install
+```
+
+### Ejecutar en desarrollo
+
+```bash
+ng serve
+```
+
+La aplicación estará disponible en:
+
+```text
+http://localhost:4200/
+```
+
+---
+
+## Conexión con el backend
+
+Este frontend está pensado para trabajar junto al backend de Bookify:
+
+```text
+https://github.com/Ivanartcor/bookify-backend
+```
+
+Antes de ejecutar la aplicación completa, asegúrate de tener el backend configurado y levantado correctamente.
+
+---
+
+## Scripts disponibles
+
+```bash
+npm start
+```
+
+Ejecuta la aplicación en modo desarrollo.
+
+```bash
+npm run build
+```
+
+Genera la versión compilada de producción.
+
+```bash
+npm test
+```
+
+Ejecuta las pruebas configuradas en Angular.
+
+---
+
+## Estado del proyecto
+
+Proyecto desarrollado como plataforma full stack de gestión de citas, con enfoque en arquitectura por roles, consumo de API REST, diseño responsive y organización modular del frontend.
+
+
+
